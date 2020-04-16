@@ -1,9 +1,13 @@
 package main
 
+import (
+	"fmt"
 
-import "fmt"
+	"github.com/hackathon/armaan/src/services"
+)
 
-func main(){
+func main() {
 	fmt.Println("OM")
+	services.HandlerFunc()
 	return
 }
