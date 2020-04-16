@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hackathon/armaan/src/services"
+	"github.com/pranjal2209/armaan/services"
 )
 
 func main() {
