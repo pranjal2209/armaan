@@ -13,7 +13,7 @@ func HandlerFunc() {
 	//router := mux.NewRouter().StrictSlash(true)
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", HomePage)
-	log.Fatal(http.ListenAndServe(getPort(), nil))
+	log.Fatal(http.ListenAndServe(getPort(), router))
 }
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
