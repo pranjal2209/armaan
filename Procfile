@@ -1,1 +1,1 @@
-web: bin/armaan
+web: armaan
