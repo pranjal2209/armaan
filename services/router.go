@@ -5,18 +5,19 @@ import (
 	"log"
 	"net/http"
 	"os"
-	//"github.com/gorilla/mux"
+
+	"github.com/gorilla/mux"
 )
 
 func HandlerFunc() {
 	//router := mux.NewRouter().StrictSlash(true)
-	//router := NewRouter().StrictSlash(true)
-	http.HandleFunc("/", HomePage)
+	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/", HomePage)
 	log.Fatal(http.ListenAndServe(getPort(), nil))
 }
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome home!")
+	fmt.Fprintf(w, "Welcome Greetings!")
 }
 func getPort() string {
 	var port = os.Getenv("PORT")
