@@ -7,18 +7,17 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/pranjal2209/armaan/services/armaan"
 )
 
 func HandlerFunc() {
 	//router := mux.NewRouter().StrictSlash(true)
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", HomePage)
+	router.HandleFunc("/", armaan.RegisterUser)
+	router.HandleFunc("/getcountries/", armaan.GetCountries)
 	log.Fatal(http.ListenAndServe(getPort(), router))
 }
 
-func HomePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome Greetings!")
-}
 func getPort() string {
 	var port = os.Getenv("PORT")
 	// Set a default port if there is nothing in the environment
